@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div>
+            <input type="text" id="word1" placeholder="Word 1" />&nbsp;
+            <input type="text" id="word2" placeholder="Word 2" />&nbsp;
+            <input type="text" id="word3" placeholder="Word 3" />&nbsp;
+            <input type="text" id="word4" placeholder="Word 4" />&nbsp;
+            <input type="text" id="word5" placeholder="Word 5" />&nbsp;
+        </div>
+        <br />
+        <div>
+            <input type="text" id="fromAddress" placeholder="From" />&nbsp;
+            <input type="text" id="toAddress" placeholder="To" />&nbsp;
+            <input type="text" id="amount" placeholder="Amount" />
+        </div>
+        <br />
+        <div>
+            <input type="text" id="walletId" placeholder="Wallet Id" />
+        </div>
+        <br />
+        <div style="display: none" id="transActionBox">
+            <h2>TransAction Successfull, Write Down your TransAction Id</h2>
+            <p id="transActionId"></p>
+        </div>
+        <br />
+        <input type="submit" id="createTransAction" value="Transfer" />
+    </section>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $('#createTransAction').click(function () {
+            var word1 = $('#word1').val();
+            var word2 = $('#word2').val();
+            var word3 = $('#word3').val();
+            var word4 = $('#word4').val();
+            var word5 = $('#word5').val();
+            var from = $('#fromAddress').val();
+            var to = $('#toAddress').val();
+            var amount = $('#amount').val();
+            var walletId = $('#walletId').val();
+            CreateTransAction(word1, word2, word3, word4, word5, from, to, amount, walletId);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <h2>Create New Wallet</h2>
+        <div>
+            <input type="text" id="word1" placeholder="Word 1" />&nbsp;
+            <input type="text" id="word2" placeholder="Word 2" />&nbsp;
+            <input type="text" id="word3" placeholder="Word 3" />&nbsp;
+            <input type="text" id="word4" placeholder="Word 4" />&nbsp;
+            <input type="text" id="word5" placeholder="Word 5" />&nbsp;
+        </div>
+
+        <div style="display: none" id="walletBox">
+            <p>Write Down Below Id</p>
+            <p id="WalletId"></p>
+        </div>
+        <br />
+        <input type="submit" id="CreateWallet" value="Crate Wallet" />
+    </section>
+
+    <section>
+        <h2>Add Address to Wallet</h2>
+        <div>
+            <input type="text" id="addressWord1" placeholder="Word 1" />&nbsp;
+            <input type="text" id="addressWord2" placeholder="Word 2" />&nbsp;
+            <input type="text" id="addressWord3" placeholder="Word 3" />&nbsp;
+            <input type="text" id="addressWord4" placeholder="Word 4" />&nbsp;
+            <input type="text" id="addressWord5" placeholder="Word 5" />&nbsp;
+        </div>
+        <br />
+        <div>
+            <input type="text" id="walletId" placeholder="Wallet Id" />
+        </div>
+
+        <div style="display: none" id="addressBox">
+            <p>Write Down Below Address</p>
+            <p id="walletAdress"></p>
+        </div>
+        <br/>
+        <input type="submit" id="AddAddress" value="Add Address to Wallet" />
+    </section>
+
+    <section>
+        <h2>Get Wallet Address's</h2>
+        <div>
+            <input type="text" id="AddresswalletId" placeholder="Wallet Id" />
+        </div>
+        <table style="display: none" id="addressTable">
+            <thead>
+                <th>Wallet Address</th>
+            </thead>
+            <tbody id="addressTableBody">
+
+            </tbody>
+            <tfoot>
+                <th>Wallet Address</th>
+            </tfoot>
+        </table>
+        <br />
+        <input type="submit" id="GetAddress" value="Get Addresses" />
+    </section>
+
+    <section>
+        <h2>Get Wallet Balance</h2>
+        <div>
+            <input type="text" id="balanceAddressId" placeholder="Address Id" />
+        </div>
+
+        <div style="display: none" id="balanceBox">
+            <p>Here is Your Balance</p>
+            <p id="AddressBalance"></p>
+        </div>
+
+        <br/>
+        <input type="submit" id="GetAddressBalance" value="Get Balance" />
+    </section>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $('#CreateWallet').click(function () {
+            var word1 = $('#word1').val();
+            var word2 = $('#word2').val();
+            var word3 = $('#word3').val();
+            var word4 = $('#word4').val();
+            var word5 = $('#word5').val();
+            CreateWallet(word1, word2, word3, word4, word5);
+        });
+
+        $('#AddAddress').click(function () {
+            var word1 = $('#addressWord1').val();
+            var word2 = $('#addressWord2').val();
+            var word3 = $('#addressWord3').val();
+            var word4 = $('#addressWord4').val();
+            var word5 = $('#addressWord5').val();
+            var walletId = $('#walletId').val();
+            AddAddressToWallet(word1, word2, word3, word4, word5, walletId);
+        });
+
+        $('#GetAddress').click(function () {
+            var walletId = $('#AddresswalletId').val();
+            GetWalletIdAddresses(walletId);
+        });
+
+        $('#GetAddressBalance').click(function () {
+            var addressId = $('#balanceAddressId').val();
+            GetWalletBalance(addressId);
+        });
+    </script>
+</body>
+
+</html>
